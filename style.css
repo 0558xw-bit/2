@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    color: aliceblue;
+    font-family: "Inter";
+    text-wrap: inherit;
+    font-size: 14px;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#sp {
+    font-size: 13px;
+    width: 300px;
+
+}
+
+#sp td {
+    padding: 0 5px 0 0;
+    padding-bottom: 1px;
+}
+
+#sp .sum {
+    padding: 5px 0 2px 0;
+}
+
+#sp th {
+    padding: 5px 0 5px 0;
+    text-align:start;
+}
