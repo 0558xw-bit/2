@@ -50,10 +50,10 @@ function generate_balanced_sp() {
 
 function generate_leaned_sp(group, lean) {
     const groups = [[3, 4], [1, 2], [0]];
-    const leans = [20, 35];
+    const leans = [40, 70, 25, 40];
 
-    let sp = generate_sp(5, 100-leans[lean]*groups[group].length);
-    const lean_sp = generate_sp(groups[group].length, leans[lean]*groups[group].length);
+    let sp = generate_sp(5, 100-leans[lean]);
+    const lean_sp = generate_sp(groups[group].length, leans[lean]);
 
     for(let i = 0; i < groups[group].length; i++) {
         sp[groups[group][i]] += lean_sp[i];
@@ -133,10 +133,10 @@ form.addEventListener("submit", function(e) {
             format_sp([generate_leaned_sp(1, 1), generate_sp(3, 30)]);
             break;
         case "7":
-            format_sp([generate_leaned_sp(2, 0), generate_sp(3, 30)]);
+            format_sp([generate_leaned_sp(2, 2), generate_sp(3, 30)]);
             break;
         case "8":
-            format_sp([generate_leaned_sp(2, 1), generate_sp(3, 30)]);
+            format_sp([generate_leaned_sp(2, 3), generate_sp(3, 30)]);
             break;            
     }
 });
