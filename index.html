@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -10,8 +12,19 @@
     <span>
         <table id="sp"> </table>
     </span>
-    <br>
-    <span style="color: gray;">F5 перегенерировать</span>
+
+    <form id="select_group">
+    <select name="type">
+                <option value="1">обычная генерация</option>
+                <option value="2">сбалансированная</option>
+                <option value="3">стрелозад 40%</option>
+                <option value="4">стрелозад 70%</option>
+                <option value="5">регенощит 40% </option>
+                <option value="6">регенощит 70%</option>
+                <option value="7">удар 25%</option>
+                <option value="8">удар 40%</option>
+            </select><button type="submit">перегенерировать</button>
+    </form>
 
 </body>
 </html>
