@@ -44,16 +44,17 @@ function generate_sp(amount, max) {
     }
 
     // round
-    for(let i = 0; i < sp.length; i++) sp[i] = +sp[i].toFixed(1);    
+    for(let i = 0; i < sp.length; i++) sp[i] = +sp[i].toFixed(2);    
 
     // ------------------
     return sp;
 }
 
-function format_sp() {
-    let newsp = [generate_sp(5, 100), generate_sp(3, 30)];
+const newsp = [generate_sp(5, 100), generate_sp(3, 30)];
 
-    let spnames = [
+function format_sp() {
+
+    const spnames = [
         [
             "Сила удара",
             "Количество энергии",
@@ -70,7 +71,7 @@ function format_sp() {
 
     let spheaders = [ "Первичные боевые параметры", "Вторичные боевые параметры" ];
 
-    let sptable = " <colgroup><col class='col1'><col class='col2'></colgroup>";
+    let sptable = "";
 
     let pm = "";
 
@@ -81,9 +82,9 @@ function format_sp() {
             if((group == 1) && (i === 0 || i === 1)) pm = "-";
             else pm = "+";
 
-            sptable += "<tr><td>"+ pm + newsp[group][i] + "%</td><td>" + spnames[group][i] + "</td></tr>";
+            sptable += "<tr><td>"+ pm + newsp[group][i].toFixed(1) + "%</td><td>" + spnames[group][i] + "</td></tr>";
         } 
-        sptable += "<tr><td colspan='2' class='sum'>сумма: " +sum(newsp[group]) +"%<td></tr>";
+        sptable += "<tr><td colspan='2' class='sum'>сумма: " +sum(newsp[group]).toFixed(1) +"%<td></tr>";
     }
 
     document.getElementById("sp").innerHTML = sptable;
