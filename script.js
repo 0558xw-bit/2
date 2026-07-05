@@ -112,7 +112,6 @@ form.addEventListener("submit", function(e) {
     var data = new FormData(form);
     var value = data.get('type');
     
-    console.log(value);
     switch(value) {
         case "1":
             format_sp([generate_sp(5, 100), generate_sp(3, 30)]);
